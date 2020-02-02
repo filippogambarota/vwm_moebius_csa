@@ -2,7 +2,7 @@
 
 This repository contains all files related to my research project about Visual Working Memory functions in Moebius Patients.
 
-This work was presented during the [Cognitive Science Arena](https://cogsci.unibz.it/), Brixen (BZ, Italy), February 7-8th, 2020. 
+This work was presented during the [Cognitive Science Arena](https://cogsci.unibz.it/), Brixen (BZ, Italy), February 7-8th, 2020. This is the [online version of the poster](reporting/poster/VMW_Moebius_Poster.html)
 
 ## Data
 

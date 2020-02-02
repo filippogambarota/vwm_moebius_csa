@@ -70,8 +70,8 @@ output:
     pandoc_args: --mathjax
     number_sections: false
 link-citations: true
-bibliography: Poster_CSA.bib
-csl: apa.csl
+bibliography: bib/poster_bib.bib
+csl: bib/apa.csl
 ---
 
 ```{r, include=FALSE, cache=FALSE}
@@ -102,13 +102,13 @@ load(here("objects", "bf_fit_obj.rda"))
 
 # Introduction
 
-Moebius syndrome is a rare neurological condition (estimated incidence of 0.002%) that primarly affect facial muscles control and eye movements (VII and VI cranial nerves). Models of **Sensorimotor Simulation** remark the importance of **Facial Mimicry** (i.e. the subtle movements of facial muscles in response to other people facial expressions) in facial expression processing and emotion recognition [@goldman2005; @wood2016]. Facial mimicry manipulation seems to have an impact on facial expression recognition [@wood2016a] (metti qualche altra citazione).
+Moebius syndrome is a rare neurological condition (estimated incidence of 0.002%) that primarly affect facial muscles control and eye movements (VII and VI cranial nerves). Models of **Sensorimotor Simulation** remark the importance of **Facial Mimicry** (i.e. the subtle movements of facial muscles in response to other people facial expressions) in facial expression processing and emotion recognition [@Goldman2005; @Wood2016]. Facial mimicry manipulation seems to have an impact on facial expression recognition [@Wood2016a] (metti qualche altra citazione).
 
-Literature about emotion processing and social functioning in Moebius patients is very sparse and mainly related to the verbal component (i.e. facial expressions labelling and rating) [@bogart2010; @calder2000]. The Wood and colleagues model [-@wood2016] proposed a lower level impact of sensorimotor simulation and facial mimicry on emotional processing, where visual representation quality (i.e. the emotional face) can be modulated by the sensorimotor activity.
+Literature about emotion processing and social functioning in Moebius patients is very sparse and mainly related to the verbal component (i.e. facial expressions labelling and rating) [@Bogart2010; @Calder2000]. The Wood and colleagues model [-@Wood2016] proposed a lower level impact of sensorimotor simulation and facial mimicry on emotional processing, where visual representation quality (i.e. the emotional face) can be modulated by the sensorimotor activity.
 
-Visual representations have been widely studied in cognitive neuroscience literature especially related to visual working memory activity (VWM). VWM can be defined as a limited-space cognitive system where visual information is temporarily stored and manipulated for further processing [@liesefeld2019; @zhang2008].
+Visual representations have been widely studied in cognitive neuroscience literature especially related to visual working memory activity (VWM). VWM can be defined as a limited-space cognitive system where visual information is temporarily stored and manipulated for further processing [@Liesefeld2019; @Zhang2008a].
 
-VWM seems to be important in social cognition [gambarota2019] and facial mimicry manipulation seems to change the precision of emotional face representations [@sessa2018]. In this study we investigate if a congenital impairment in facial mimicry can impact the quality of visual working memory representations.
+VWM seems to be important in social cognition [Gambarota2019] and facial mimicry manipulation seems to change the precision of emotional face representations [@Sessa2018]. In this study we investigate if a congenital impairment in facial mimicry can impact the quality of visual working memory representations.
 
 # Methods
 
