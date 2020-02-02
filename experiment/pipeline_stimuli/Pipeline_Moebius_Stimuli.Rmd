@@ -1,6 +1,10 @@
 ---
-title: Pipeline Moebius Stimuli
-author: Filippo Gambarota
+title: "Pipeline VWM Moebius Stimuli"
+author: "Filippo Gambarota"
+output:
+    html_document:
+        toc: true
+        toc_float: true
 ---
 
 # Videos
