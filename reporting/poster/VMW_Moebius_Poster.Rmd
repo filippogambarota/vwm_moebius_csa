@@ -18,7 +18,7 @@ accent_colour: "black"
 main_fontfamily: "Roboto"
 main_textcol: "#ffffff"
 main_textsize: "125px"
-logoleft_name: "img/r_logos.png"
+logoleft_name: "img/r_logos.svg"
 logoright_name: "img/logo_affiliation.svg"
 logocenter_name: "img/qr_code.svg"
 
