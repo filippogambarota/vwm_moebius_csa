@@ -49,3 +49,18 @@ The final dataset inside the `data/cleaned` folder is a long form dataset beacau
 * **Mem**: the same variable as **Memory** but trasformed in factor
 * **Test**: the pressed image by the subject
 * **Test_Memory_Abs**: the response variable in all analysis that is computed as $Test\;-Memory$. Where 0 is a correct answer and from 1 to 7 an increasing error.
+
+## Reproducibility
+
+The entire project (data cleaning, statistical analysis and poster) can be reproduced simply opening the `RProject file` and running:
+
+* `data_creation.R`
+* `analysis.R`
+
+Then if you want to reproduce the poster you can compile the `VMW_Moebius_Poster.Rmd` file.
+
+# Stimuli Creation
+
+The **experiment** folder contains the eprime script and a [detailed pipeline](experiment/Pipeline_Moebius_Stimuli.html) to create the final stimuli. As explained inside the document, I used different softwares inside the pipeline. 
+
+All steps are documented and explained but only final stimuli are uploaded. However, starting from the initial movies (reference inside the pipeline document) is possible to reproduce the final result adjusting some scripts to the *specific path of your computer*. This means that the level of reproducibility is reduced compared to the **R** part of the repository because of the fragmentation of used softwares.

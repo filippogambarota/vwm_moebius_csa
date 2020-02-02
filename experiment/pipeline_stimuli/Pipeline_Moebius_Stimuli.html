@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Filippo Gambarota" />
+  <title>Pipeline Moebius Stimuli</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="C:\Users\Filippo\Documents\MEGA\Template_Folder\CSS_Collection\github-pandoc.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Pipeline Moebius Stimuli</h1>
+<p class="author">Filippo Gambarota</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#videos">Videos</a><ul>
+<li><a href="#female">Female</a></li>
+<li><a href="#male">Male</a></li>
+</ul></li>
+<li><a href="#frames-extraction">Frames Extraction</a><ul>
+<li><a href="#female-1">Female</a><ul>
+<li><a href="#anger">Anger</a></li>
+<li><a href="#fear">Fear</a></li>
+<li><a href="#happiness">Happiness</a></li>
+</ul></li>
+<li><a href="#male-1">Male</a><ul>
+<li><a href="#anger-1">Anger</a></li>
+<li><a href="#fear-2">Fear</a></li>
+<li><a href="#happiness-1">Happiness</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#oval-cropping">Oval Cropping</a><ul>
+<li><a href="#male-2">Male</a><ul>
+<li><a href="#anger-2">Anger</a></li>
+<li><a href="#fear-3">Fear</a></li>
+<li><a href="#happiness-2">Happiness</a></li>
+</ul></li>
+<li><a href="#female-2">Female</a><ul>
+<li><a href="#anger-3">Anger</a></li>
+<li><a href="#fear-4">Fear</a></li>
+<li><a href="#happiness-3">Happiness</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#oval-final-crop">Oval final crop</a><ul>
+<li><a href="#male-3">Male</a><ul>
+<li><a href="#anger-4">Anger</a></li>
+<li><a href="#fear-5">Fear</a></li>
+<li><a href="#happiness-4">Happiness</a></li>
+</ul></li>
+<li><a href="#female-3">Female</a><ul>
+<li><a href="#anger-5">Anger</a></li>
+<li><a href="#fear-6">Fear</a></li>
+<li><a href="#happiness-5">Happiness</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#e-prime-resizing">E-Prime Resizing</a></li>
+<li><a href="#adjusting-the-luminance">Adjusting the luminance</a></li>
+</ul>
+</nav>
+<h1 id="videos">Videos</h1>
+<p>Movies were taken from the <a href="https://mmifacedb.eu/">MMI Database</a>. In particular this is the specific collection <a href="https://mmifacedb.eu/view_collection/videos-emotional-label">https://mmifacedb.eu/view_collection/videos-emotional-label</a>.</p>
+<h2 id="female">Female</h2>
+<ul>
+<li>Anger: folder <code>Sessions/100</code></li>
+<li>Fear: folder <code>Sessions/107</code></li>
+<li>Happiness: <code>Sessions/109</code></li>
+</ul>
+<h2 id="male">Male</h2>
+<ul>
+<li>Anger: folder <code>Sessions/1809</code></li>
+<li>Fear: folder <code>Sessions/1814</code></li>
+<li>Happiness: <code>Sessions/1816</code></li>
+</ul>
+<h1 id="frames-extraction">Frames Extraction</h1>
+<p>I have extracted frames with <a href="https://ffmpeg.org">ffmpeg</a> using the command:</p>
+<pre><code>ffmpeg -i inputvideo.avi -r 25 -start_number 0 %1d.png</code></pre>
+<p>Every videos have the same <strong>framerate</strong> of <code>25 frames/second</code> so with this command all possible frames are extracted.</p>
+<p>Starting from the male images that is fullscreen, the ratio between <strong>Height and Width</strong> has been calculated for making the female picture as similar as possible. However, resolution is different so male images are higher in resolution. Male ratio has been calculated with <a href="https://eikhart.com/blog/aspect-ratio-calculator">this website</a> and is <code>0.774468085106383 : 1</code></p>
+<ul>
+<li>Female images have been cropped keeping the same ratio with a final dimension of: <code>w = 314; h = 405 px</code>.</li>
+<li>Male images dimensions are: <code>w = 546; h = 705 px</code>.</li>
+</ul>
+<h2 id="female-1">Female</h2>
+<p>Female videos have a <strong>resolution</strong> of <code>720 x 576 px</code>. I have cropped extracted frames with <a href="https://imagemagick.org/index.php">ImageMagick</a> using the command:</p>
+<pre><code>magick mogrify -crop 314x405+384+153 *.png</code></pre>
+<h3 id="anger">Anger</h3>
+<p>Selected images from the entire pool of frames are: <strong>5 7 8 9 11 12 13 15</strong>. Images have been cropped using the following command:</p>
+<pre><code>magick mogrify -crop 314x405+384+153 *.png</code></pre>
+<h3 id="fear">Fear</h3>
+<p>Both fear videos are appropriate and images have been cropped using the following command:</p>
+<pre><code>magick mogrify -crop 314x405+384+153 *.png</code></pre>
+<h4 id="fear-1">Fear 1</h4>
+<p>Selected images are <strong>6 10 12 14 16 19 21 27</strong>.</p>
+<h4 id="fear-2-selected">Fear 2 (selected)</h4>
+<p>Selected images are <strong>0 14 16 18 20 22 24 28</strong>.</p>
+<h3 id="happiness">Happiness</h3>
+<p>Selected images are <strong>30 38 41 42 43 44 45 47</strong>.</p>
+<p>Happy images have been cropped using the following command:</p>
+<pre><code>magick mogrify -crop 314x405+370+153 *.png</code></pre>
+<h2 id="male-1">Male</h2>
+<h3 id="anger-1">Anger</h3>
+<p>Selected images are <strong>2 4 6 7 8 9 10 12 15</strong> and cropping command is the following:</p>
+<pre><code>magick mogrify -crop 546x705+30+15 *.png</code></pre>
+<h3 id="fear-2">Fear</h3>
+<p>Selected images are <strong>7 10 12 14 16 20 22 25</strong> and cropping command is the following:</p>
+<pre><code>magick mogrify -crop 546x705+10+15 *.png</code></pre>
+<h3 id="happiness-1">Happiness</h3>
+<p>Selected images are <strong>0 10 12 17 22 23 24 28</strong> and cropping command is the following:</p>
+<pre><code>magick mogrify -crop 546x705+0+15 *.png</code></pre>
+<h1 id="oval-cropping">Oval Cropping</h1>
+<p>The dimension of the <strong>oval</strong> is the same between male and female <code>247x300</code>. The position <code>x and y values</code> is the same within the same emotion-gender but is different between emotion and gender.</p>
+<p>The oval crop is made with <strong>MATLAB R2019b</strong> and the <code>Cropping_Faces_Script.m</code> script.</p>
+<h2 id="male-2">Male</h2>
+<p>Male images are <code>546x705</code>. For pairing with female images I cropped to <code>314x405</code>.</p>
+<p>Images are cropped with this command (imagemagick):</p>
+<pre><code>magick mogrify -resize 314x405 -quality 100 -interpolate &#39;bilinear&#39; *.png</code></pre>
+<h3 id="anger-2">Anger</h3>
+<p>Oval cropping coordinates are <code>x = 33; y = 46</code></p>
+<h3 id="fear-3">Fear</h3>
+<p>Oval cropping coordinates are <code>x = 32; y = 43</code></p>
+<h3 id="happiness-2">Happiness</h3>
+<p>Oval cropping coordinates are <code>x = 31; y = 47</code></p>
+<h2 id="female-2">Female</h2>
+<p>Female images are the reference point so the final dimension before cropping is <code>314x405</code>.</p>
+<h3 id="anger-3">Anger</h3>
+<p>Oval cropping coordinates are <code>x = 35; y = 50</code></p>
+<h3 id="fear-4">Fear</h3>
+<p>Oval cropping coordinates are <code>x = 32; y = 52</code></p>
+<h3 id="happiness-3">Happiness</h3>
+<p>Oval cropping coordinates are <code>x = 39; y = 55</code></p>
+<h1 id="oval-final-crop">Oval final crop</h1>
+<p>The oval has been finally cropped <code>254x306</code> for reducing the trasparent background. Given the centre of the face the rectangular crop has been made having the same lenght outside each border of the image.</p>
+<h2 id="male-3">Male</h2>
+<h3 id="anger-4">Anger</h3>
+<p>Cropping coordinates are <code>x = 29; y = 43</code>.</p>
+<h3 id="fear-5">Fear</h3>
+<p>Oval cropping coordinates are <code>x = 28; y = 40</code></p>
+<h3 id="happiness-4">Happiness</h3>
+<p>Oval cropping coordinates are <code>x = 27; y = 44</code></p>
+<h2 id="female-3">Female</h2>
+<h3 id="anger-5">Anger</h3>
+<p>Oval cropping coordinates are <code>x = 31; y = 47</code></p>
+<h3 id="fear-6">Fear</h3>
+<p>Oval cropping coordinates are <code>x = 29; y = 49</code></p>
+<h3 id="happiness-5">Happiness</h3>
+<p>Oval cropping coordinates are <code>x = 36; y = 52</code></p>
+<h1 id="e-prime-resizing">E-Prime Resizing</h1>
+<p>For the E-Prime script final images are resized <code>130x157</code> with the following command:</p>
+<pre><code>magick mogrify -resize 130x157 -quality 100 -interpolate &#39;bilinear&#39; *.png</code></pre>
+<p>The slide object of E-Prime require both the percentage of the single frame and the position (in percentage) on the <strong>x</strong> and <strong>y</strong> axes.</p>
+<ul>
+<li><code>Width = 15%; Height = 25%</code></li>
+<li>Position within the slide are:</li>
+</ul>
+<h1 id="adjusting-the-luminance">Adjusting the luminance</h1>
+<p>For using these stimuli in the PC a luminance adjustment is required. For both male and female images the luminance is reduce at 65% with the following command:</p>
+<pre><code> magick mogrify -modulate 65,100,100 *.png</code></pre>
+</body>
+</html>
