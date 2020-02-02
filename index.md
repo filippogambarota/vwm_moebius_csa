@@ -61,6 +61,6 @@ Then if you want to reproduce the poster you can compile the `VMW_Moebius_Poster
 
 # Stimuli Creation
 
-The **experiment** folder contains the eprime script and a [detailed pipeline](experiment/Pipeline_Moebius_Stimuli.html) to create the final stimuli. As explained inside the document, I used different softwares inside the pipeline. 
+The **experiment** folder contains the eprime script and a [detailed pipeline](experiment/pipeline_stimuli/Pipeline_Moebius_Stimuli.html) to create the final stimuli. As explained inside the document, I used different softwares inside the pipeline. 
 
 All steps are documented and explained but only final stimuli are uploaded. However, starting from the initial movies (reference inside the pipeline document) is possible to reproduce the final result adjusting some scripts to the *specific path of your computer*. This means that the level of reproducibility is reduced compared to the **R** part of the repository because of the fragmentation of used softwares.
