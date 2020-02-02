@@ -1,3 +1,4 @@
 theme: jekyll-theme-minimal
 title: [VWM Moebius]
 description: [This is the repository of the Visual Working Memory experiment presented at the CSA 2020]
+show_downloads: ["true"]
