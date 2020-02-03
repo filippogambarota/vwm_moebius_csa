@@ -1,7 +1,7 @@
 ---
 # HEADER AND FOOTER
-main_topsize: 0.1 #percent coverage of the poster
-main_bottomsize: 0.07
+main_topsize: 0.13 #percent coverage of the poster
+main_bottomsize: 0.06
 
 # BASICS
 poster_height: "39.4in"
@@ -32,7 +32,7 @@ authorextra_textsize:
 affiliation_textsize:
 affiliation_textcol:
 caption_textsize:
-reference_textsize:
+reference_textsize: "18px"
 
 #ESSENTIALS
 title: '**Visual Working Memory Precision for Emotional Faces in Moebius Patients**'
@@ -63,7 +63,7 @@ affiliation:
   - num: 4
     address: Ferrari
 main_findings:
-  - "Facial mimicry impairment impacts the quality of visual working memory representations"
+  - "**Facial mimicry impairment impacts the quality of visual working memory representations**"
 output: 
   posterdown::posterdown_betterport:
     self_contained: false
@@ -102,17 +102,17 @@ load(here("objects", "bf_fit_obj.rda"))
 
 # Introduction
 
-Moebius syndrome is a rare neurological condition (estimated incidence of 0.002%) that primarly affect facial muscles control and eye movements (VII and VI cranial nerves). Models of **Sensorimotor Simulation** remark the importance of **Facial Mimicry** (i.e. the subtle movements of facial muscles in response to other people facial expressions) in facial expression processing and emotion recognition [@Goldman2005; @Wood2016]. Facial mimicry manipulation seems to have an impact on facial expression recognition [@Wood2016a] (metti qualche altra citazione).
+**Moebius syndrome** is a rare neurological condition that primarly affect *facial muscles control and eye movements* (VII and VI cranial nerves). Models of **Sensorimotor Simulation** remark the importance of **Facial Mimicry** (i.e. the subtle movements of facial muscles in response to other people facial expressions) in facial expression processing and emotion recognition [@Goldman2005; @Sato2013; @Wood2016]. **Facial mimicry compromission** seems to have an impact on facial expression recognition [@Korb2016; @Oberman2007; @Wood2016a].
 
-Literature about emotion processing and social functioning in Moebius patients is very sparse and mainly related to the verbal component (i.e. facial expressions labelling and rating) [@Bogart2010; @Calder2000]. The Wood and colleagues model [-@Wood2016] proposed a lower level impact of sensorimotor simulation and facial mimicry on emotional processing, where visual representation quality (i.e. the emotional face) can be modulated by the sensorimotor activity.
+Literature about **emotion processing and social functioning in Moebius patients** is very sparse and mainly related to the verbal component (i.e. facial expressions labelling and rating) [@Bogart2010; @Calder2000]. The moedel by Wood and colleagues [-@Wood2016] proposed a lower level impact of sensorimotor simulation and facial mimicry on emotional processing, where visual representation quality (i.e. the emotional face) can be modulated by the sensorimotor activity.
 
-Visual representations have been widely studied in cognitive neuroscience literature especially related to visual working memory activity (VWM). VWM can be defined as a limited-space cognitive system where visual information is temporarily stored and manipulated for further processing [@Liesefeld2019; @Zhang2008a].
+Visual representations have been widely studied in cognitive neuroscience literature especially related to visual working memory activity (VWM). VWM can be defined as a limited-space cognitive system where visual information is temporarily stored and manipulated for further processing [@Liesefeld2019; @Luck2008].
 
-VWM seems to be important in social cognition [Gambarota2019] and facial mimicry manipulation seems to change the precision of emotional face representations [@Sessa2018]. In this study we investigate if a congenital impairment in facial mimicry can impact the quality of visual working memory representations.
+VWM seems to be important in social cognition [@Gambarota2019] and facial mimicry manipulation seems to change the precision of emotional face representations [@Sessa2018]. In this study we investigate if a congenital impairment in facial mimicry can impact the **precision** of VWM representations.
 
 # Methods
 
-We used a **Delayed Estimation Task** Figure \@ref(fig:paradigm). with emotional pictures (8 pictures) extracted from a facial expression video. Images ranged from neutral (0) to full facial expression (7) of **Anger**, **Fear** and **Happiness**. Subjects have to compare a brefly presented face (Memory Array) with a continous array made by the entire pool of images of the same emotion (Test Display). Our dependant variable (**Test-Memory**):
+We used a **Delayed Estimation Task** [@Zhang2008] Figure \@ref(fig:paradigm). with emotional pictures (8 pictures) extracted from a facial expression video. Images ranged from neutral (0) to full facial expression (7) of **Anger**, **Fear** and **Happiness**. Subjects have to compare a brefly presented face (Memory Array) with a continous array made by the entire pool of images of the same emotion (Test Display). Our dependant variable (**Test-Memory**):
 
 $abs(Pressed\;Level - Memory\;Level)$
 
@@ -129,10 +129,14 @@ knitr::include_graphics("img/Paradigm.svg")
 
 We collected **7 Moebius patients** (3 females, mean age of 34 years, SD=10.5) and **30 healthy volunteers** (15 females, mean age of 24.2, SD=4.6).
 
+</br>
+
 # Analysis
 
 We use a `Linear Mixed-Effect Model` for modeling the absolute error distribution (Figure \@ref(fig:histgroup)) in the task as a function of **Emotion**, **Memory Level** and **Group**.
 We use a *model selection* approach to select the best predictors combination to explain our data. For dealing with difference in variability we include in the model that `Moebius` and `Controls` have difference in variance.
+
+</br>
 
 ```{r histgroup, fig.cap="Test - Memory Distribution"}
 ggplot(moebius) +
@@ -142,8 +146,8 @@ ggplot(moebius) +
     xlab("Test - Memory") +
     facet_wrap(.~Group) +
     ylab("Density") +
-    theme(axis.title.x = element_text(size = 15),
-          axis.title.y = element_text(size = 15),
+    theme(axis.title.x = element_text(size = 20),
+          axis.title.y = element_text(size = 20),
           axis.text.x = element_text(size = 15),
           axis.text.y = element_text(size = 10),
           strip.text = element_text(size = 15),
@@ -154,10 +158,7 @@ ggplot(moebius) +
           panel.grid.minor = element_blank())
 ```
 
-<br/>
-<br/>
-<br/>
-<br/>
+</br>
 
 # Results
 
@@ -175,7 +176,7 @@ lme(Test_Memory_Abs ~ Group + Emotion,
 plot(bf_fit_include, main = "Predictors added to null model")
 ```
 
-Our model:
+### The statistical model:
 
 $$Test-Memory = Group + Emotion$$
 
@@ -189,26 +190,41 @@ fit <- lme(Test_Memory_Abs ~ Group + Emotion,
 ```
 
 ```{r fiteffects, out.width="100%", fig.cap="Model Effects for Group and Emotion"}
+
+fit <- lme(Test_Memory_Abs ~ Group + Emotion,
+           random = ~1|Subject,
+           weights=varIdent(form=~1|Group*Emotion),
+           data = moebius,
+           method = "REML")
 fit_eff <- as.data.frame(ggeffect(fit, terms = c("Group", "Emotion")))
 
 ggplot(fit_eff) +
     geom_errorbar(aes(x = group, ymin = conf.low, ymax = conf.high),
-                  width = .2,
+                  width = .1,
                   size = .7) +
     geom_line(aes(x = group, y = predicted, color = x, group = x),
               size =.8) +
     geom_point(aes(x = group, y = predicted, color = x),
-               size = 2) +
-  theme(panel.border = element_blank(),
+               size = 3) +
+    theme(panel.border = element_blank(),
           panel.grid.major = element_blank(),
-          panel.grid.minor = element_blank())
+          panel.grid.minor = element_blank(),
+          axis.title.x = element_text(size = 20),
+          axis.text.x = element_text(size = 15),
+          axis.title.y = element_text(size = 20),
+          axis.text.y = element_text(size = 10),
+          legend.title = element_text(size = 20),
+          legend.text = element_text(size = 15)) +
+    xlab("Emotion") +
+    ylab("Test - Memory") +
+    labs(color = "Group")
 ```
 
 # References
 
 <style>
 #main-img-left {
- width: 20%;
+ width: 18%;
 }
 
 #main-img-right {
