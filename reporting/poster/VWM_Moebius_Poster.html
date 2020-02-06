@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Visual Working Memory Precision for Emotional Faces in Moebius Patients</title>
+
+
+
+
+
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+<!--
+Here are the required style attributes for css to make this poster work :)
+-->
+<style>
+@page {
+size: 27.8in 39.4in;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0px;
+padding: 0px;
+width: 27.8in;
+height: 39.4in;
+text-align: justify;
+font-size: 37px;
+line-height: 1.05;
+}
+/* RMarkdown Class Styles */
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r {
+background-color: #dddddd40;
+border-radius: 4mm;
+padding: 4mm;
+width: 75%;
+margin: auto;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
+}
+code.sourceCode.r{
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: #9B001424;
+color: #9B0014;
+padding: 1.2mm;
+line-height: 1;
+border-radius: 2mm;
+}
+caption {
+margin-bottom: 10px;
+font-size: 20pt;
+font-style: italic;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #9B001420;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+  border-spacing: 0;
+  font-size: 40%;
+  border-style: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 1em;
+  padding-left: 1em;
+  line-height: 1em;
+}
+table {
+  margin: auto;
+}
+th {
+  padding-left: 5mm;
+  padding-right: 5mm;
+}
+.caption {
+font-size: 20pt;
+font-style: italic;
+padding-top: 0;
+}
+.references {
+font-size: 12px;
+line-height: 90%;
+}
+/* Create three unequal columns that floats next to each other */
+.column {
+float: left;
+padding: 0px;
+}
+.outer {
+width: 27.8in;
+height: calc(39.4in *  (1 - 0.1 - 0.06 - 0.01) );
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+-moz-column-count: 3; /* Firefox */
+column-count: 3;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+column-gap: 0;
+padding-left: 0cm;
+padding-right: 0cm;
+/* -webkit-column-rule-width: 50%;
+-moz-column-rule-width: 50%;
+column-rule-width: 50%; */
+-webkit-column-rule-style: none;
+-moz-column-rule-style: none;
+column-rule-style: none;
+-webkit-column-rule-color: black;
+-moz-column-rule-color: black;
+column-rule-color: black;
+background-color: #ffffff;
+font-family: Roboto;
+margin-top: calc(39.4in *  0.1 );
+padding-top: 1em;
+padding-bottom: 1em;
+}
+span.citation {
+  color: #9B0014;
+  font-weight: bold;
+}
+a {
+text-decoration: none;
+color: #9B0014;
+}
+#title {
+font-size: 95px;
+text-align: left;
+margin: 0;
+line-height: 98%;
+border-bottom: 0;
+font-weight: normal;
+background: 0;
+}
+#author {
+color: #9B0014;
+margin: 0;
+line-height: 85%;
+font-size: 50px;
+}
+#affiliation {
+padding-top: 0.1em;
+color: ;
+font-style: italic;
+font-size: 25px;
+margin: 0;
+}
+sup {
+color: black;
+}
+.affiliation sup {
+font-size: 20px;
+}
+.author {
+text-align: left;
+}
+.author sup {
+font-size: 30px;
+}
+.author_extra {
+color: #9B0014;
+margin: 0;
+line-height: 85%;
+font-size: 35px;
+text-align: left;
+}
+.outer h1, h2, h3, h4, h5, h6 {
+text-align: center;
+margin: 0;
+font-weight: bold;
+}
+.section h1 {
+  text-align:center;
+  padding-bottom:5px;
+  background:
+    linear-gradient(
+      to left,
+      #ffffff 1%,
+      #ffffff 20%,
+      #9B001475 33%,
+      #9B0014 50%,
+      #9B001475 66%,
+      #ffffff 80%,
+      #ffffff 99%
+    )
+    left
+    bottom
+    #ffffff
+    no-repeat;
+  background-size:100% 5px ;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.outer h2 {
+text-align: center;
+}
+.outer p, .level2 {
+color: #000000;
+}
+.outer ol {
+padding-left: 8%;
+padding-right: 8%;
+text-align: left;
+}
+.main {
+width: 27.8in;
+height: calc(39.4in * 0.1);
+position: absolute;
+background-color: #9B0014;
+color: #ffffff90;
+font-family: Roboto;
+background-image: linear-gradient(#9B0014 50%,#9B0014);
+}
+.main strong {
+color: #ffffff;
+}
+.main strong > sup {
+color: #ffffff;
+}
+.main sup {
+color: #ffffff90;
+}
+#main-img-left {
+width: 10%;
+left: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+#main-img-center {
+width: 10%;
+left: calc(27.8in * 0.45);
+bottom: 0.5in;
+position: absolute;
+}
+#main-img-right {
+width: 10%;
+right: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+.main p {
+font-size: 125px;
+font-family: Roboto;
+text-align: center;
+margin: 0;
+position: absolute;
+top: 50%;
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+margin-left: 1em;
+}
+.fab {
+color: #00000030;
+font-size: 25px;
+}
+.twitter, i {
+color: #00000030;
+font-size: 35px;
+text-decoration: none;
+}
+a.email {
+text-decoration: none;
+color: #00000030;
+font-size: 35px;
+}
+.envelope {
+color: #00000030;
+font-size: 5px;
+text-decoration: none;
+}
+.poster_wrap {
+width: 27.8in;
+height: 39.4in;
+padding: 0cm;
+}
+.main_bottom {
+width: 27.8in;
+height: calc(39.4in * 0.06);
+margin-top: calc(39.4in * (1 - 0.06));
+position: absolute;
+background-color: #9B0014;
+background-image: linear-gradient(#9B0014 10%, #9B0014);
+}
+.section {
+  padding-left: 10mm;
+  padding-right: 10mm;
+}
+span > #tab:mytable {
+  font-weight: bold;
+}
+.orcid img {
+  width: 3%;
+}
+.emphasis {
+  background-color: #008080;
+  color: #ffffff;
+  border: solid #0b2045 3mm;
+  margin: 1em;
+  padding-left: 0;
+  padding-right: 0;
+}
+.emphasis h1 {
+  font-weight: bold;
+  background: none;
+  background-color: #0b2045;
+  padding-bottom: 5mm;
+  padding-top: 1mm;
+  margin-top: -1mm;
+  margin-right: -1mm;
+  margin-left: -1mm;
+}
+.emphasis blockquote {
+  border: 0;
+}
+.emphasis ol {
+  padding: 0;
+  padding-left: 8%;
+  font-size: 100%;
+  font-weight: bold;
+}
+.emphasis p {
+  color: #ffffff;
+}
+</style>
+</head>
+<body>
+
+
+<div class="poster_wrap">
+
+<div class="column outer">
+<div class="section">
+<h1 id="title"><strong>Visual Working Memory Precision for Emotional Faces in Moebius Patients</strong></h1><br>
+<h3 id="author" class="author">
+
+<strong>Filippo Gambarota</strong><sup> 1, <a class="orcid" href="https://orcid.org/0000-0002-6666-1747"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a></sup><br>
+<a class="twitter" href="https://mobile.twitter.com/fgambarota"><i class="fab fa-twitter"></i>&nbsp;&nbsp;@fgambarota</a><br>
+
+<a class='envelope'><i class="fas fa-envelope"></i></a> <a href="mailto:filippo.gambarota@phd.unipd.it" class="email">filippo.gambarota@phd.unipd.it</a> <br>
+    </h3>
+
+<h5 id="author_extra", class="author_extra">
+ Massimiliano Pastore<sup>1</sup>
+ Roy Luria<sup>2,3</sup>
+ Pier Francesco Ferrari<sup>4</sup>
+ Paola Sessa<sup>1,5</sup>
+</h5>
+
+
+<p id="affiliation" class="affiliation">
+<sup>1</sup> Department of Developmental Psychology and Socialization, University of Padova, Italy<br> <sup>2</sup> School of Psychological Sciences, Tel Aviv University, Israel<br> <sup>3</sup> Sagol School of Neuroscience, Tel-Aviv University, Ramat Aviv, Tel Aviv, Israel<br> <sup>4</sup> Institut des Sciences Cognitives Marc Jeannerod UMR 5229, CNRS, and Université Claude Bernarde Lyon, Bron Cedex, France<br> <sup>5</sup> Padova Neuroscience Center, Padova, Italy
+</p>
+</div>
+
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p><strong>Moebius syndrome</strong> is a rare neurological condition that primarily affects <em>facial muscles control and eye movements</em> (VII and VI cranial nerves). Models of <strong>Sensorimotor Simulation</strong> remark the importance of <strong>Facial Mimicry</strong> (i.e. the subtle movements of facial muscles in response to other people facial expressions) in facial expression processing and emotion recognition <span class="citation">[<a href="#ref-Goldman2005" role="doc-biblioref">1</a>]–[<a href="#ref-Wood2016" role="doc-biblioref">3</a>]</span>. <strong>Facial mimicry compromission</strong> seems to have an impact on facial expression recognition <span class="citation">[<a href="#ref-Korb2016" role="doc-biblioref">4</a>]–[<a href="#ref-Wood2016a" role="doc-biblioref">6</a>]</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="img/moebius_adults.jpg" alt="People with Moebius Syndrome" width="40%" />
+<p class="caption">
+Figure 1: People with Moebius Syndrome
+</p>
+</div>
+<p>Literature on <strong>emotion processing and social functioning in Moebius patients</strong> is very sparse and mainly related to the verbal component (i.e. facial expressions labelling and rating) <span class="citation">[<a href="#ref-Bogart2010" role="doc-biblioref">7</a>], [<a href="#ref-Calder2000" role="doc-biblioref">8</a>]</span>. The model by Wood and colleagues <span class="citation">[<a href="#ref-Wood2016" role="doc-biblioref">3</a>]</span> proposed an impact of sensorimotor simulation and facial mimicry at a low level of emotional processing such that the quality of visual representations can be modulated by the sensorimotor activity.</p>
+<p>Visual representations have been widely studied in cognitive neuroscience literature especially related to visual working memory activity (VWM). VWM can be defined as a limited-space cognitive system where visual information is temporarily stored and manipulated for further processing <span class="citation">[<a href="#ref-Liesefeld2019" role="doc-biblioref">9</a>], [<a href="#ref-Luck2008" role="doc-biblioref">10</a>]</span>.</p>
+<p>VWM seems to be important in social cognition <span class="citation">[<a href="#ref-Gambarota2019" role="doc-biblioref">11</a>]</span> and facial mimicry manipulations can modulate the precision of emotional face representations <span class="citation">[<a href="#ref-Sessa2018" role="doc-biblioref">12</a>]</span>. In this study we investigate if a congenital impairment in facial mimicry can impact the <strong>precision</strong> of VWM representations.</p>
+</div>
+<div id="methods" class="section level1">
+<h1>Methods</h1>
+<p>We used a <strong>Delayed Estimation Task</strong> <span class="citation">[<a href="#ref-Zhang2008" role="doc-biblioref">13</a>]</span> (Figure <a href="#fig:paradigm">2</a>). with emotional pictures (8 pictures) extracted from a facial expression video. Images ranged from neutral (0) to full facial expression (7) of <strong>Anger</strong>, <strong>Fear</strong> and <strong>Happiness</strong>. Subjects had to compare a brefly presented face (Memory Array) with a continous array presenting the entire pool of images of the same emotion (Test Display). Our dependant variable (<strong>Test-Memory</strong>):</p>
+<p><span class="math inline">\(abs(Pressed\;Level - Memory\;Level)\)</span></p>
+<p>Where:</p>
+<ul>
+<li>0 = Correct</li>
+<li>1-7 = Increasing Error</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:paradigm"></span>
+<img src="img/Paradigm.svg" alt="Delayed Estimation Task with Faces" width="100%" />
+<p class="caption">
+Figure 2: Delayed Estimation Task with Faces
+</p>
+</div>
+<div id="hypothesis" class="section level4">
+<h4>Hypothesis</h4>
+<p><font color="#0066ff"> <strong>The main hypothesis is that Moebius patients have lower visual working memory precision (in terms of higher mean error and higher variability) compared to the control group</strong></font></p>
+<p><strong>Sample</strong>:</p>
+<p>We collected <strong>7 Moebius patients</strong> (3 females, mean age of 34 years, SD=10.5) and <strong>30 healthy volunteers</strong> (15 females, mean age of 24.2, SD=4.6).</p>
+</div>
+</div>
+<div id="analysis" class="section level1">
+<h1>Analysis</h1>
+<p>We used a <code>Linear Mixed-Effect Model</code> to model the absolute error distribution (Figure <a href="#fig:histgroup">3</a>) in the task as a function of <strong>Emotion</strong> (Fear, Happiness and Anger), <strong>Group</strong> (Moebius and Controls) and <strong>Memory Level</strong> (0-7) as a covariate.
+We use a <em>model selection</em> approach to select the best predictors combination (according to <strong>Akaike Information Criterion</strong> and <strong>Bayesian Information Criterion</strong>) to explain our data. In order to deal with difference in variability between groups we include in the model the possibility to have <em>heterogeneity of variances</em> among <strong>Emotion</strong> and <strong>Group</strong> factors.</p>
+<div class="figure" style="text-align: center"><span id="fig:histgroup"></span>
+<img src="VWM_Moebius_Poster_files/figure-html/histgroup-1.png" alt="Test - Memory Distribution" width="100%" />
+<p class="caption">
+Figure 3: Test - Memory Distribution
+</p>
+</div>
+</div>
+<div id="results" class="section level1">
+<h1>Results</h1>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="VWM_Moebius_Poster_files/figure-html/unnamed-chunk-4-1.png" alt="Model Weights according to AIC and BIC. Only models with weight &gt; 0.01 are plotted" width="100%" />
+<p class="caption">
+Figure 4: Model Weights according to AIC and BIC. Only models with weight &gt; 0.01 are plotted
+</p>
+</div>
+<p>Where the best models are:</p>
+<p><strong>Model 1</strong>: AIC and BIC</p>
+<p><font color="#9B0014"> <strong>Test-Memory = Emotion + Group + Memory + Emotion x Memory</strong></font></p>
+<p><strong>Model 3</strong>: BIC</p>
+<p>Test-Memory = Emotion + Group</p>
+<div id="final-model" class="section level3">
+<h3>Final Model</h3>
+<p>We selected the <strong>Model 1</strong>:</p>
+<p><img src="VWM_Moebius_Poster_files/figure-html/unnamed-chunk-5-1.png" width="100%" style="display: block; margin: auto;" /><img src="VWM_Moebius_Poster_files/figure-html/unnamed-chunk-5-2.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<style>
+#main-img-left {
+ width: 17%;
+}
+
+#main-img-right {
+ width: 19%;
+}
+
+#main-img-center {
+ width: 6%;
+}
+</style>
+<div id="refs" class="references">
+<div id="ref-Goldman2005">
+<p>[1] A. I. Goldman and C. S. Sripada, “Simulationist models of face-based emotion recognition,” <em>Cognition</em>, vol. 94, no. 3, pp. 193–213, 2005, doi: <a href="https://doi.org/10.1016/j.cognition.2004.01.005">10.1016/j.cognition.2004.01.005</a>.</p>
+</div>
+<div id="ref-Sato2013">
+<p>[2] W. Sato, T. Fujimura, T. Kochiyama, and N. Suzuki, “Relationships among Facial Mimicry, Emotional Experience, and Emotion Recognition,” <em>PLoS ONE</em>, vol. 8, no. 3, p. e57889, Mar. 2013, doi: <a href="https://doi.org/10.1371/journal.pone.0057889">10.1371/journal.pone.0057889</a>.</p>
+</div>
+<div id="ref-Wood2016">
+<p>[3] A. Wood, M. Rychlowska, S. Korb, and P. Niedenthal, “Fashioning the Face: Sensorimotor Simulation Contributes to Facial Expression Recognition,” <em>Trends in Cognitive Sciences</em>, vol. 20, no. 3, pp. 227–240, 2016, doi: <a href="https://doi.org/10.1016/j.tics.2015.12.010">10.1016/j.tics.2015.12.010</a>.</p>
+</div>
+<div id="ref-Korb2016">
+<p>[4] S. Korb, A. Wood, C. A. Banks, D. Agoulnik, T. A. Hadlock, and P. M. Niedenthal, “Asymmetry of Facial Mimicry and Emotion Perception in Patients With Unilateral Facial Paralysis,” <em>JAMA Facial Plastic Surgery</em>, vol. 18, no. 3, p. 222, May 2016, doi: <a href="https://doi.org/10.1001/jamafacial.2015.2347">10.1001/jamafacial.2015.2347</a>.</p>
+</div>
+<div id="ref-Oberman2007">
+<p>[5] L. M. Oberman, P. Winkielman, and V. S. Ramachandran, “Face to face: Blocking facial mimicry can selectively impair recognition of emotional expressions,” <em>Social Neuroscience</em>, vol. 2, nos. 3-4, pp. 167–178, Sep. 2007, doi: <a href="https://doi.org/10.1080/17470910701391943">10.1080/17470910701391943</a>.</p>
+</div>
+<div id="ref-Wood2016a">
+<p>[6] A. Wood, G. Lupyan, S. Sherrin, and P. Niedenthal, “Altering sensorimotor feedback disrupts visual discrimination of facial expressions,” <em>Psychonomic Bulletin and Review</em>, vol. 23, no. 4, pp. 1150–1156, Aug. 2016, doi: <a href="https://doi.org/10.3758/s13423-015-0974-5">10.3758/s13423-015-0974-5</a>.</p>
+</div>
+<div id="ref-Bogart2010">
+<p>[7] K. R. Bogart and D. Matsumoto, “Facial mimicry is not necessary to recognize emotion: Facial expression recognition by people with Moebius syndrome,” <em>Social Neuroscience</em>, vol. 5, no. 2, pp. 241–251, 2010, doi: <a href="https://doi.org/10.1080/17470910903395692">10.1080/17470910903395692</a>.</p>
+</div>
+<div id="ref-Calder2000">
+<p>[8] A. J. Calder, J. Keane, J. Cole, R. Campbell, and A. W. Young, “Facial expression recognition by people with mobius syndrome,” <em>Cognitive Neuropsychology</em>, vol. 17, nos. 1-3, pp. 73–87, 2000, doi: <a href="https://doi.org/10.1080/026432900380490">10.1080/026432900380490</a>.</p>
+</div>
+<div id="ref-Liesefeld2019">
+<p>[9] H. R. Liesefeld and H. J. Müller, “Current directions in visual working memory research: An introduction and emerging insights,” <em>British Journal of Psychology</em>, vol. 110, no. 2, pp. 193–206, May 2019, doi: <a href="https://doi.org/10.1111/bjop.12377">10.1111/bjop.12377</a>.</p>
+</div>
+<div id="ref-Luck2008">
+<p>[10] S. J. Luck, “Visual short-term memory,” in <em>Visual memory</em>, S. J. Luck and A. Hollingworth, Eds. Oxford University Press, 2008, pp. 43–85.</p>
+</div>
+<div id="ref-Gambarota2019">
+<p>[11] F. Gambarota and P. Sessa, “Visual Working Memory for Faces and Facial Expressions as a Useful ‘Tool’ for Understanding Social and Affective Cognition,” <em>Frontiers in Psychology</em>, vol. 10, no. OCT, pp. 1–7, Oct. 2019, doi: <a href="https://doi.org/10.3389/fpsyg.2019.02392">10.3389/fpsyg.2019.02392</a>.</p>
+</div>
+<div id="ref-Sessa2018">
+<p>[12] P. Sessa, A. S. Lomoriello, and R. Luria, “Neural measures of the causal role of observers’ facial mimicry on visual working memory for facial expressions,” <em>Social Cognitive and Affective Neuroscience</em>, vol. 13, no. 12, pp. 1281–1291, 2018, doi: <a href="https://doi.org/10.1093/scan/nsy095">10.1093/scan/nsy095</a>.</p>
+</div>
+<div id="ref-Zhang2008">
+<p>[13] W. Zhang and S. J. Luck, “Discrete fixed-resolution representations in visual working memory,” <em>Nature</em>, vol. 453, no. 7192, pp. 233–235, May 2008, doi: <a href="https://doi.org/10.1038/nature06860">10.1038/nature06860</a>.</p>
+</div>
+</div>
+</div>
+
+</div>
+<div class="main">
+<p><strong>Facial mimicry impairment impacts the precision of visual working memory representations</strong></p>
+</div>
+<div class="main_bottom">
+<img id="main-img-left" src=img/r_logos.svg>
+<img id="main-img-center" src=img/qr_code.svg>
+<img id="main-img-right" src=img/logo_affiliation.svg>
+</div>
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+var script = document.createElement("script");
+script.type = "text/javascript";
+var src = "true";
+if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+if (location.protocol !== "file:" && /^https?:/.test(src))
+src = src.replace(/^https?:/, '');
+script.src = src;
+document.getElementsByTagName("head")[0].appendChild(script);
+})();
+</script>
+
+
+</body>
+</html>
