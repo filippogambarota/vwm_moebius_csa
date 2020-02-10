@@ -121,7 +121,7 @@ VWM seems to be important in social cognition [@Gambarota2019] and facial mimicr
 
 # Methods
 
-We used a **Delayed Estimation Task** [@Zhang2008] (Figure \@ref(fig:paradigm)). with emotional pictures (8 pictures) extracted from a facial expression video. Images ranged from neutral (0) to full facial expression (7) of **Anger**, **Fear** and **Happiness**. Subjects had to compare a brefly presented face (Memory Array) with a continous array presenting the entire pool of images of the same emotion (Test Display). Our dependant variable (**Test-Memory**):
+We used a **Delayed Estimation Task** [@Zhang2008] (Figure \@ref(fig:paradigm)). with emotional pictures (8 pictures) extracted from a facial expression video. Images ranged from neutral (0) to full facial expression (7) of **Anger**, **Fear** and **Happiness**. Subjects had to compare a briefly presented face (Memory Array) with a continous array presenting the entire pool of images of the same emotion (Test Display). Our dependant variable (**Test-Memory**):
 
 $abs(Pressed\;Level - Memory\;Level)$
 
